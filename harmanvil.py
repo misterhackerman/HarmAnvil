@@ -9,8 +9,9 @@ if not sys.stdin.isatty():
 elif len(sys.argv) == 2:
     input_string = sys.argv[1]
 else:
-    print("\033[32m:: Usage: harptoy <string>\033[0m")
+    print("\033[32m:: Usage: harmanvil <string>\033[0m")
     exit(1)
+
 # here you can change the table to fit your toy.
 table = { "4"     :	"1",
 "(4)"	:	"(2)",
@@ -25,13 +26,16 @@ table = { "4"     :	"1",
 
 notes = re.split(r'(\s)', input_string)
 
+# TODO case statement would be prefered.
+# sorry for the ugly code
 for note in notes:
     if note == ' ':
         print(' ', end='')
         continue
-    if note in string.ascii_lowercase:
-        print(note, end='')
-        continue
+    if len(note) > 0:
+        if note[0] in (string.ascii_letters + "'"+ '"') :
+            print(note, end='')
+            continue
     if note == "\n":
         print()
         continue
