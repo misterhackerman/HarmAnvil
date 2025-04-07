@@ -13,6 +13,7 @@ else:
     exit(1)
 
 # here you can change the table to fit your toy.
+# number = blow, (number) = draw
 table = { "4"     :	"1",
 "(4)"	:	"(2)",
 "5"     :	"3",
@@ -56,5 +57,5 @@ for note in notes:
     print(table[note], end=' ')
 print()
 if ALRT:
-    print("In red shown the original notes, cause your fucking toy can't play the note")
+    print("In red shown the original notes, cause your harmonica can't play the note")
 
